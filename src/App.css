@@ -1,0 +1,14 @@
+.subimtForm {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 200px;
+}
+
+.subimtForm > input {
+  margin: 8px 0px;
+}
+
+textarea {
+  resize: none;
+}
