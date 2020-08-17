@@ -10,10 +10,14 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <div className="title"></div>
           <Switch>
             <Route exact path="/">
-              <SetSiteList />
-              <GetSiteList />
+              <div className="titleImg"></div>
+              <div className="mainContents">
+                <SetSiteList />
+                <GetSiteList />
+              </div>
             </Route>
             <Route path="/uploadSite">
               <SiteDataPost />

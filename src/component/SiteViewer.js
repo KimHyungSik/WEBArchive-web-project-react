@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class SiteViewer extends React.Component {
   render() {
-    var sitelsit = this.props.siteList.result;
+    var sitelsit = this.props.siteList.siteList.result;
     var siteBlocks = [];
     if (sitelsit != null) {
       for (var i = 0; i < sitelsit.length; i++) {
@@ -12,15 +12,17 @@ export default class SiteViewer extends React.Component {
               href={'https://' + sitelsit[i].link}
               data-id={sitelsit[i].sitedid}
             >
-              <p>
-                <h2>{sitelsit[i].sitename}</h2>
-              </p>
+              <h2>{sitelsit[i].sitename}</h2>
               <span>{sitelsit[i].description}</span>
             </a>
           </div>
         );
       }
     }
-    return <div>{siteBlocks}</div>;
+    return (
+      <section key="section" className="mainContent">
+        {siteBlocks}
+      </section>
+    );
   }
 }

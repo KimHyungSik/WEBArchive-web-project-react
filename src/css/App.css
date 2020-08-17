@@ -1,3 +1,29 @@
 @import url('./SideBar.css');
 @import url('./SiteDatapost.css');
 @import url('./SiteViewer.css');
+
+html,
+body {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+.mainContents {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  height: 130px;
+  border: 2px solid black;
+  background-color: #24292e;
+}
+
+.titleImg {
+  height: 200px;
+  border: 2px solid black;
+}

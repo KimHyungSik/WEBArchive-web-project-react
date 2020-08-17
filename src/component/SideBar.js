@@ -30,7 +30,7 @@ export default class SideBar extends React.Component {
 
   render() {
     return (
-      <nav>
+      <nav className="mainContent SideBar">
         <input
           type="button"
           value="getList"
