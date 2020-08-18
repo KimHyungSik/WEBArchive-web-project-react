@@ -1,3 +1,4 @@
+@import url('./resetCss.css');
 @import url('./SideBar.css');
 @import url('./SiteDatapost.css');
 @import url('./SiteViewer.css');
@@ -8,22 +9,28 @@ body {
 }
 
 .App {
+  width: 90%;
   height: 100%;
 }
 
 .mainContents {
-  display: flex;
   width: 100%;
+  display: flex;
+  padding-top: 2%;
   height: 100%;
 }
 
 .title {
-  height: 130px;
-  border: 2px solid black;
+  color: #ffffff;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  height: 100px;
   background-color: #24292e;
 }
 
 .titleImg {
-  height: 200px;
+  height: 100px;
+  margin-top: 7px;
   border: 2px solid black;
 }

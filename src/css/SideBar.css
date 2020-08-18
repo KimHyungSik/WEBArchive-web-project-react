@@ -1,5 +1,18 @@
 .SideBar {
-  border: 2px solid black;
+  border-radius: 12px;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
   margin: 10px 25px 10px 0px;
+  padding: 5px;
   min-width: 300px;
+  -webkit-box-shadow: 10px 9px 5px 3px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 10px 9px 5px 3px rgba(0, 0, 0, 0.49);
+  box-shadow: 10px 9px 5px 3px rgba(0, 0, 0, 0.49);
+}
+
+.Button {
+  cursor: Pointer;
+  padding: 5px 0px;
+  margin: 5px 0px;
 }

@@ -5,7 +5,7 @@ export default class SideBar extends React.Component {
   state = { siteList: [] };
 
   componentDidMount() {
-    fetch('http://192.168.0.16:3001/sitedata')
+    fetch('http://192.168.0.16:3001/table/sitedata')
       .then((result) => {
         return result.json();
       })
@@ -17,11 +17,12 @@ export default class SideBar extends React.Component {
   }
 
   getSiteList() {
-    fetch('http://192.168.0.16:3001/sitedata')
+    fetch('http://192.168.0.16:3001/table/sitedata')
       .then((result) => {
         return result.json();
       })
       .then((json) => {
+        console.log(json);
         this.setState({
           siteList: json,
         });
@@ -32,6 +33,7 @@ export default class SideBar extends React.Component {
     return (
       <nav className="mainContent SideBar">
         <input
+          className="Button"
           type="button"
           value="getList"
           onClick={(e) => {
@@ -40,6 +42,7 @@ export default class SideBar extends React.Component {
           }}
         ></input>
         <input
+          className="Button"
           type="button"
           value="deleteList"
           onClick={(e) => {

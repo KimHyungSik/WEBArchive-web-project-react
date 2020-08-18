@@ -20,7 +20,7 @@ class SitiDataPost extends React.Component {
       alert('빈칸이 존재 합니다');
     } else {
       axios
-        .post('http://localhost:3001/sitedata', webObject)
+        .post('http://localhost:3001/table/sitedata', webObject)
         .then(() => console.log('submit web link!'));
     }
     this.setState({ link: '', sitename: '', description: '' });
