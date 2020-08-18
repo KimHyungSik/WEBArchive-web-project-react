@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
+import './SiteViewer'
 
 export default class SiteViewer extends React.Component {
   render() {
-    var sitelsit = this.props.siteList.result;
-    var siteBlocks = [];
+    var sitelsit = this.props.siteList.result
+    var siteBlocks = []
     if (sitelsit != null) {
       for (var i = 0; i < sitelsit.length; i++) {
         siteBlocks.push(
@@ -15,14 +16,14 @@ export default class SiteViewer extends React.Component {
               <h2>{sitelsit[i].sitename}</h2>
               <span>{sitelsit[i].description}</span>
             </a>
-          </div>
-        );
+          </div>,
+        )
       }
     }
     return (
       <section key="section" className="mainContent">
         {siteBlocks}
       </section>
-    );
+    )
   }
 }

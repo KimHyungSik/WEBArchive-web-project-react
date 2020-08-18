@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <div className="title"></div>
+          <div className="title">안녕하세용</div>
           <Switch>
             <Route exact path="/">
               <div className="titleImg"></div>
