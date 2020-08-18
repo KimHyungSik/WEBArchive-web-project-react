@@ -39,6 +39,13 @@ export default class SideBar extends React.Component {
             this.props.onClick(this.state.siteList);
           }}
         ></input>
+        <input
+          type="button"
+          value="deleteList"
+          onClick={(e) => {
+            this.props.onClickDelete(this.state.siteList);
+          }}
+        ></input>
       </nav>
     );
   }

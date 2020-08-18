@@ -1,23 +1,33 @@
+import types from '../types';
+
 const initialState = {
-  siteList: {
-    result: [
-      {
-        siteid: null,
-        sitename: null,
-        link: null,
-        description: null,
-        imagelink: null,
-      },
-    ],
-  },
+  result: [
+    {
+      siteid: null,
+      sitename: null,
+      link: null,
+      description: null,
+      imagelink: null,
+    },
+  ],
 };
 
+//stieList 저장하는 reducer
 const siteList = (state = initialState, action) => {
   switch (action.type) {
-    case 'SITELIST':
+    case types.siteListType:
+      console.log('redux', action.siteList);
       return {
         ...state,
-        siteList: action.siteList,
+        result: action.siteList.result,
+      };
+    case types.delete:
+      console.log(state);
+      return {
+        ...state,
+        result: state.result.filter(
+          () => state.result.sitename !== action.siteList.result.sitename
+        ),
       };
     default:
       return state;

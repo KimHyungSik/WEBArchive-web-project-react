@@ -8,6 +8,7 @@ class SitiDataPost extends React.Component {
   }
 
   submit_Handle = (e) => {
+    e.preventDefault();
     const { link, sitename, description } = this.state;
     const webObject = {
       link,
@@ -22,6 +23,7 @@ class SitiDataPost extends React.Component {
         .post('http://localhost:3001/sitedata', webObject)
         .then(() => console.log('submit web link!'));
     }
+    this.setState({ link: '', sitename: '', description: '' });
   };
 
   handleChange = (e) => {
