@@ -8,9 +8,10 @@ const persistConfig = {
   storage,
 };
 
-const enhancedReducer = persistReducer(persistConfig, reducer);
+//const enhancedReducer = persistReducer(persistConfig, reducer);
 
 export default createStore(
-  enhancedReducer,
+  //enhancedReducer,
+  reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

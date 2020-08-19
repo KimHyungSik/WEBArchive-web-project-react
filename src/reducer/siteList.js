@@ -3,6 +3,7 @@ import types from '../types';
 const initialState = {
   result: [
     {
+      tagname: null,
       siteid: null,
       sitename: null,
       link: null,
