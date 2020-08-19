@@ -4,6 +4,7 @@ import SiteDataPost from './dataComponent/SiteDataPost';
 import TagDataPost from './dataComponent/TagDataPost';
 import GetSiteList from './dataComponent/GetSiteList';
 import SetSiteList from './dataComponent/SetSiteList';
+import TagLinkPost from './dataComponent/TagLinkPost';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
@@ -25,6 +26,9 @@ class App extends React.Component {
             </Route>
             <Route path="/uploadtag">
               <TagDataPost />
+            </Route>
+            <Route path="/uploadtaglink">
+              <TagLinkPost />
             </Route>
           </Switch>
         </div>

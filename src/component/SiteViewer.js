@@ -9,7 +9,7 @@ export default class SiteViewer extends React.Component {
       for (var i = 0; i < sitelsit.length; i++) {
         siteBlocks.push(
           <div key={i} className="siteBlock">
-            <img className="siteLogo"></img>
+            <div className="siteLogo"></div>
             <a
               href={'https://' + sitelsit[i].link}
               data-id={sitelsit[i].sitedid}
