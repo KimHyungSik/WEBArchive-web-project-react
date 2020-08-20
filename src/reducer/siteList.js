@@ -1,6 +1,16 @@
 import types from '../types';
 
 const initialState = {
+  show: [
+    {
+      tagname: null,
+      siteid: null,
+      sitename: null,
+      link: null,
+      description: null,
+      imagelink: null,
+    },
+  ],
   result: [
     {
       tagname: null,
@@ -21,6 +31,26 @@ const siteList = (state = initialState, action) => {
       return {
         ...state,
         result: action.siteList.result,
+        show: action.siteList.result,
+      };
+    case types.suchSite:
+      console.log('redux', action.suchText);
+      var showList = [];
+      if (action.suchText === '') {
+        showList = state.result;
+      } else {
+        for (var i = 0; i < state.result.length; i++) {
+          if (
+            action.suchText === state.result[i].tagname ||
+            action.suchText === state.result[i].sitename
+          ) {
+            showList.push(state.result[i]);
+          }
+        }
+      }
+      return {
+        ...state,
+        show: showList,
       };
     case types.delete:
       console.log(state);

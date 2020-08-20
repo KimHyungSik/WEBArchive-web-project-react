@@ -5,8 +5,8 @@ import GetSiteList from '../dataComponent/GetSiteList';
 export default class SideBar extends React.Component {
   state = { siteList: [], suchText: '' };
 
-  getSiteList() {
-    fetch('http://192.168.0.16:3001/table/sitedata')
+  componentDidMount() {
+    fetch('http://192.168.0.16:3001/table/linkdata')
       .then((result) => {
         return result.json();
       })
@@ -15,23 +15,13 @@ export default class SideBar extends React.Component {
         this.setState({
           siteList: json,
         });
-        this.props.onClick(this.state.siteList);
+        this.props.putSiteList(this.state.siteList);
       });
   }
 
   getSiteSuch = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3001/table/linkdata?tagname=${this.state.suchText}`)
-      .then((result) => {
-        return result.json();
-      })
-      .then((json) => {
-        console.log(json);
-        this.setState({
-          siteList: json,
-        });
-        this.props.onClick(this.state.siteList);
-      });
+    this.props.onClick(this.state.suchText);
   };
 
   handleChange = (e) => {
@@ -50,6 +40,7 @@ export default class SideBar extends React.Component {
               name="suchText"
               value={this.state.suchText}
               onChange={this.handleChange}
+              onKeyUP={this.props.onClick(this.state.suchText)}
               className="suchText"
             ></input>
             <input
@@ -59,22 +50,6 @@ export default class SideBar extends React.Component {
               className="suchButton"
             ></input>
           </form>
-          <input
-            className="Button"
-            type="button"
-            value="getList"
-            onClick={(e) => {
-              this.getSiteList();
-            }}
-          ></input>
-          <input
-            className="Button"
-            type="button"
-            value="deleteList"
-            onClick={(e) => {
-              this.props.onClickDelete(this.state.siteList);
-            }}
-          ></input>
           <input type="checkbox"></input>
           <input type="checkbox"></input>
           <input type="checkbox"></input>

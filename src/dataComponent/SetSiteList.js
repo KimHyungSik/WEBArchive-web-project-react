@@ -2,10 +2,14 @@
 import { connect } from 'react-redux';
 import SideBar from '../component/SideBar';
 import types from '../types';
+import siteList from '../reducer/siteList';
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClick: (siteList) => {
+    onClick: (suchText) => {
+      dispatch({ type: types.suchSite, suchText });
+    },
+    putSiteList: (siteList) => {
       dispatch({ type: types.siteListType, siteList });
     },
     onClickDelete: (siteList) => {

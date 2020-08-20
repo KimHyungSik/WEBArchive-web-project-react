@@ -3,7 +3,7 @@ import './SiteViewer';
 
 export default class SiteViewer extends React.Component {
   render() {
-    var sitelsit = this.props.siteList.result;
+    var sitelsit = this.props.siteList.show;
     var siteBlocks = [];
     if (sitelsit != null) {
       for (var i = 0; i < sitelsit.length; i++) {
