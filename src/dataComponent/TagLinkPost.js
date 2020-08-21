@@ -60,13 +60,8 @@ class TagLinkPost extends React.Component {
       for (var i = 0; i < sitelsit.length; i++) {
         siteBlocks.push(
           <div key={i}>
-            <a
-              href={'https://' + sitelsit[i].link}
-              data-id={sitelsit[i].sitedid}
-            >
-              <h2>{sitelsit[i].sitename}</h2>
-              <span>{sitelsit[i].siteid}</span>
-            </a>
+            <h2>{sitelsit[i].sitename}</h2>
+            <span>{sitelsit[i].siteid}</span>
           </div>
         );
       }
@@ -78,10 +73,8 @@ class TagLinkPost extends React.Component {
       for (var x = 0; x < taglist.length; x++) {
         tagBlock.push(
           <div key={i}>
-            <a data-id={taglist[x].tagid}>
-              <h2>{taglist[x].tagname}</h2>
-              <span>{taglist[x].tagid}</span>
-            </a>
+            <h2>{taglist[x].tagname}</h2>
+            <span>{taglist[x].tagid}</span>
           </div>
         );
       }

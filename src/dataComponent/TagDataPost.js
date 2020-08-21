@@ -17,7 +17,7 @@ class TagDataPost extends React.Component {
       alert('빈칸이 존재 합니다');
     } else {
       axios
-        .post('http://localhost:3001/tags', tagObject)
+        .post('http://localhost:3001/table/tags', tagObject)
         .then(() => console.log('submit web link!'));
     }
     this.setState({

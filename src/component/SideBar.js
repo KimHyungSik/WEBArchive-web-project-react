@@ -1,17 +1,22 @@
 import React from 'react';
 import './SideBar';
-import GetSiteList from '../dataComponent/GetSiteList';
 
 export default class SideBar extends React.Component {
-  state = { siteList: [], suchText: '' };
-
+  constructor(props) {
+    super(props);
+    this.state = { siteList: [], suchText: '' };
+  }
   componentDidMount() {
     fetch('http://192.168.0.16:3001/table/linkdata')
-      .then((result) => {
-        return result.json();
-      })
+      .then(
+        (result) => {
+          return result.json();
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
       .then((json) => {
-        console.log(json);
         this.setState({
           siteList: json,
         });
@@ -40,7 +45,7 @@ export default class SideBar extends React.Component {
               name="suchText"
               value={this.state.suchText}
               onChange={this.handleChange}
-              onKeyUP={this.props.onClick(this.state.suchText)}
+              onKeyUp={this.props.onClick(this.state.suchText)}
               className="suchText"
             ></input>
             <input

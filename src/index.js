@@ -5,10 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './store/store';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistStore } from 'redux-persist';
+//import { PersistGate } from 'redux-persist/integration/react';
+//import { persistStore } from 'redux-persist';
 
-const persistor = persistStore(store);
+//const persistor = persistStore(store);
 
 ReactDOM.render(
   <React.StrictMode>

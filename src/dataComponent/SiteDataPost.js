@@ -4,16 +4,22 @@ import axios from 'axios';
 class SitiDataPost extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { link: '', sitename: '', description: '' };
+    this.state = {
+      link: '',
+      sitename: '',
+      description: '',
+      //  imagelink: null,
+    };
   }
 
   submit_Handle = (e) => {
     e.preventDefault();
-    const { link, sitename, description } = this.state;
+    const { link, sitename, description, imagelink } = this.state;
     const webObject = {
       link,
       sitename,
       description,
+      // imagelink,
     };
 
     if (link === '' || sitename === '' || description === '') {
@@ -31,6 +37,12 @@ class SitiDataPost extends React.Component {
       [e.target.name]: e.target.value,
     });
   };
+
+  // handleFileInput = (e) => {
+  //   this.setState({
+  //     imagelink: e.target.files[0],
+  //   });
+  // };
 
   render() {
     return (

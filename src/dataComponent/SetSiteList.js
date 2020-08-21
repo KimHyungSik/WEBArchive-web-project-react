@@ -2,7 +2,6 @@
 import { connect } from 'react-redux';
 import SideBar from '../component/SideBar';
 import types from '../types';
-import siteList from '../reducer/siteList';
 
 function mapDispatchToProps(dispatch) {
   return {

@@ -27,22 +27,20 @@ const initialState = {
 const siteList = (state = initialState, action) => {
   switch (action.type) {
     case types.siteListType:
-      console.log('redux', action.siteList);
       return {
         ...state,
         result: action.siteList.result,
         show: action.siteList.result,
       };
     case types.suchSite:
-      console.log('redux', action.suchText);
       var showList = [];
       if (action.suchText === '') {
         showList = state.result;
       } else {
         for (var i = 0; i < state.result.length; i++) {
           if (
-            action.suchText === state.result[i].tagname ||
-            action.suchText === state.result[i].sitename
+            state.result[i].tagname.indexOf(action.suchText) !== -1 ||
+            state.result[i].sitename.indexOf(action.suchText) !== -1
           ) {
             showList.push(state.result[i]);
           }
