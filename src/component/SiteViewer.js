@@ -3,19 +3,21 @@ import './SiteViewer';
 
 export default class SiteViewer extends React.Component {
   render() {
-    var sitelsit = this.props.siteList.show;
+    var sitelist = this.props.siteList.show;
     var siteBlocks = [];
-    if (sitelsit != null) {
-      for (var i = 0; i < sitelsit.length; i++) {
+    if (sitelist != null) {
+      for (var i = 0; i < sitelist.length; i++) {
         siteBlocks.push(
           <div key={i} className="siteBlock">
-            <div className="siteLogo"></div>
+            <div className="siteLogo">
+              <img src={sitelist[i].imagelink} alt={sitelist[i].sitename}></img>
+            </div>
             <a
-              href={'https://' + sitelsit[i].link}
-              data-id={sitelsit[i].sitedid}
+              href={'https://' + sitelist[i].link}
+              data-id={sitelist[i].sitedid}
             >
-              <h2>{sitelsit[i].sitename}</h2>
-              <span>{sitelsit[i].description}</span>
+              <h2>{sitelist[i].sitename}</h2>
+              <span>{sitelist[i].description}</span>
             </a>
           </div>
         );

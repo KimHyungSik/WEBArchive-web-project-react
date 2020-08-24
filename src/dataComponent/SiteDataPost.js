@@ -8,28 +8,31 @@ class SitiDataPost extends React.Component {
       link: '',
       sitename: '',
       description: '',
-      //  imagelink: null,
+      imagelink: false,
     };
   }
 
   submit_Handle = (e) => {
     e.preventDefault();
-    const { link, sitename, description, imagelink } = this.state;
-    const webObject = {
-      link,
-      sitename,
-      description,
-      // imagelink,
-    };
+    const data = new FormData();
+    data.append('imagelink', this.state.imagelink);
+    data.append('link', this.state.link);
+    data.append('sitename', this.state.sitename);
+    data.append('description', this.state.description);
 
-    if (link === '' || sitename === '' || description === '') {
+    if (
+      this.statelink === '' ||
+      this.statesitename === '' ||
+      this.statedescription === ''
+    ) {
       alert('빈칸이 존재 합니다');
     } else {
       axios
-        .post('http://localhost:3001/table/sitedata', webObject)
+        .post('http://localhost:3001/table/sitedata/sitedata', data)
         .then(() => console.log('submit web link!'));
     }
     this.setState({ link: '', sitename: '', description: '' });
+    console.log(data);
   };
 
   handleChange = (e) => {
@@ -38,15 +41,24 @@ class SitiDataPost extends React.Component {
     });
   };
 
-  // handleFileInput = (e) => {
-  //   this.setState({
-  //     imagelink: e.target.files[0],
-  //   });
-  // };
+  handleFileInput = (e) => {
+    this.setState({
+      imagelink: e.target.files[0],
+    });
+  };
 
   render() {
     return (
-      <form onSubmit={this.submit_Handle} className="subimtForm">
+      <form
+        onSubmit={this.submit_Handle}
+        className="subimtForm"
+        encType="multipart/form-data"
+      >
+        <input
+          type="file"
+          name="imagelink"
+          onChange={this.handleFileInput}
+        ></input>
         <input
           type="text"
           name="link"

@@ -7,7 +7,7 @@ export default class SideBar extends React.Component {
     this.state = { siteList: [], suchText: '' };
   }
   componentDidMount() {
-    fetch('http://192.168.0.16:3001/table/linkdata')
+    fetch('http://192.168.0.16:3001/table/tagdata')
       .then(
         (result) => {
           return result.json();

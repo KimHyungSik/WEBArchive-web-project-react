@@ -3,7 +3,7 @@ import types from '../types';
 const initialState = {
   show: [
     {
-      tagname: null,
+      tags: [],
       siteid: null,
       sitename: null,
       link: null,
@@ -13,7 +13,7 @@ const initialState = {
   ],
   result: [
     {
-      tagname: null,
+      tags: [],
       siteid: null,
       sitename: null,
       link: null,
@@ -38,11 +38,14 @@ const siteList = (state = initialState, action) => {
         showList = state.result;
       } else {
         for (var i = 0; i < state.result.length; i++) {
-          if (
-            state.result[i].tagname.indexOf(action.suchText) !== -1 ||
-            state.result[i].sitename.indexOf(action.suchText) !== -1
-          ) {
-            showList.push(state.result[i]);
+          for (var j = 0; j < state.result[i].tags.length; j++) {
+            if (
+              state.result[i].tags[j].indexOf(action.suchText) !== -1 ||
+              state.result[i].sitename.indexOf(action.suchText) !== -1
+            ) {
+              showList.push(state.result[i]);
+              break;
+            }
           }
         }
       }
