@@ -9,23 +9,28 @@ export default class SiteViewer extends React.Component {
       for (var i = 0; i < sitelist.length; i++) {
         siteBlocks.push(
           <div key={i} className="siteBlock">
-            <div className="siteLogo">
-              <img src={sitelist[i].imagelink} alt={sitelist[i].sitename}></img>
-            </div>
             <a
               href={'https://' + sitelist[i].link}
               data-id={sitelist[i].sitedid}
             >
-              <h2>{sitelist[i].sitename}</h2>
-              <span>{sitelist[i].description}</span>
+              <div className="siteLogo">
+                <img
+                  src={sitelist[i].imagelink}
+                  alt={sitelist[i].sitename}
+                ></img>
+              </div>
+              <div className="contents">
+                <h2>{sitelist[i].sitename}</h2>
+                <span>{sitelist[i].description}</span>
+              </div>
             </a>
           </div>
         );
       }
     }
     return (
-      <section key="section" className="mainContent">
-        {siteBlocks}
+      <section key="section">
+        <div className="mainContent site_items">{siteBlocks}</div>
       </section>
     );
   }

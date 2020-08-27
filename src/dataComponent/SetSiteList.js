@@ -5,8 +5,8 @@ import types from '../types';
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClick: (suchText) => {
-      dispatch({ type: types.suchSite, suchText });
+    suchSiteList: (such) => {
+      dispatch({ type: types.suchSite, such });
     },
     putSiteList: (siteList) => {
       dispatch({ type: types.siteListType, siteList });

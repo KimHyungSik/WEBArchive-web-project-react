@@ -12,25 +12,26 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <div className="title">안녕하세용</div>
-          <Switch>
-            <Route exact path="/">
-              <div className="titleImg"></div>
-              <div className="mainContents">
-                <SetSiteList />
-                <GetSiteList />
-              </div>
-            </Route>
-            <Route path="/uploadSite">
-              <SiteDataPost />
-            </Route>
-            <Route path="/uploadtag">
-              <TagDataPost />
-            </Route>
-            <Route path="/uploadtaglink">
-              <TagLinkPost />
-            </Route>
-          </Switch>
+          <div className="title"></div>
+          <div className="bodys">
+            <Switch>
+              <Route exact path="/">
+                <div className="mainContents">
+                  <SetSiteList />
+                  <GetSiteList />
+                </div>
+              </Route>
+              <Route path="/uploadSite">
+                <SiteDataPost />
+              </Route>
+              <Route path="/uploadtag">
+                <TagDataPost />
+              </Route>
+              <Route path="/uploadtaglink">
+                <TagLinkPost />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </BrowserRouter>
     );
