@@ -33,16 +33,18 @@ class TagDataPost extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.submit_Handle}>
-        <input
-          type="text"
-          placeholder="tagname"
-          name="tagname"
-          value={this.state.tagname}
-          onChange={this.handleChange}
-        ></input>
-        <input type="submit"></input>
-      </form>
+      <div className="tagPost">
+        <form onSubmit={this.submit_Handle}>
+          <input
+            type="text"
+            placeholder="tagname"
+            name="tagname"
+            value={this.state.tagname}
+            onChange={this.handleChange}
+          ></input>
+          <input type="submit"></input>
+        </form>
+      </div>
     );
   }
 }

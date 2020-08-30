@@ -12,7 +12,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <div className="title"></div>
+          <header>
+            <div className="title">WEBA</div>
+          </header>
           <div className="bodys">
             <Switch>
               <Route exact path="/">

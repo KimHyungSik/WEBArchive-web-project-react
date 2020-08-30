@@ -49,6 +49,7 @@ export default class SideBar extends React.Component {
   };
 
   checkedChek = (e) => {
+    console.log(e.target);
     var value = e.target.value;
     var checked = this.state.checked;
 
@@ -76,27 +77,33 @@ export default class SideBar extends React.Component {
     var checkBox = [];
     for (var i = 0; i < tags.length; i++) {
       checkBox.push(
-        <label key={i}>
+        <span key={i} className="checkBoxBlork">
           <input
+            id={tags[i].tagname}
             type="checkbox"
             value={tags[i].tagname}
             onClick={this.checkedChek}
-          ></input>
-          {tags[i].tagname}
-        </label>
+          />
+          <label for={tags[i].tagname} className="checkBox">
+            {tags[i].tagname}
+          </label>
+        </span>
       );
     }
     return (
       <nav className="mainContent SideBar">
         <div className="SideBar_itmes">
-          <input
-            type="text"
-            name="suchText"
-            value={this.state.suchText}
-            onChange={this.handleChange}
-            onKeyUp={this.suchSite()}
-            className="suchText"
-          ></input>
+          <div className="suchBar">
+            <input
+              type="text"
+              name="suchText"
+              value={this.state.suchText}
+              onChange={this.handleChange}
+              onKeyUp={this.suchSite()}
+              placeholder="검색"
+              className="suchText"
+            ></input>
+          </div>
           {checkBox}
         </div>
       </nav>

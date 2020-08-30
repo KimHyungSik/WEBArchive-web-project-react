@@ -1,32 +1,43 @@
 .SideBar {
-  background: #c8faf1;
-  margin: 0px 25px 25px 10px;
-  padding: 0px 5px 5px 5px;
-  min-width: 250px;
-  -webkit-box-shadow: 10px 9px 5px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 10px 9px 5px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 10px 9px 5px 3px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
+  background: #dfdfe2;
+  width: 15rem;
+  height: 100%;
+  padding: 1.5rem 0.5rem 0 0.5rem;
 }
 
-.SideBar_itmes {
-  display: flex;
-  flex-direction: column;
-  width: 85%;
-  height: 85%;
-  margin-top: 50px;
+.SideBar_itmes > .suchBar {
+  border-bottom: solid 1px #385899;
 }
 
-.such_column {
-  display: flex;
-  margin-bottom: 25px;
+.suchBar > input {
+  border: none;
+  width: 13rem;
+  height: 3rem;
+  font-size: 2rem;
+  margin: 0 0 5px 0;
+  background-color: #cccccf;
 }
 
-.suchText {
-  padding: 8px 15px;
-  margin-right: 7px;
-  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.24);
-  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.24);
+.checkBox {
+  background-color: #4a76ce;
+  border-radius: 0px 98px 98px 98px;
+  -moz-border-radius: 0px 98px 98px 98px;
+  -webkit-border-radius: 0px 98px 98px 98px;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 4px 4px 10px 4px;
+  display: block;
+  margin: 0.8rem 0;
+}
+.checkBox:hover {
+  cursor: pointer;
+  background-color: #233861;
+}
+.checkBoxBlork > input {
+  display: none;
+}
+
+.checkBoxBlork > input[type='checkbox']:checked + label {
+  background-color: #f5a117;
 }
