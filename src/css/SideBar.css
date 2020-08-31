@@ -41,3 +41,22 @@
 .checkBoxBlork > input[type='checkbox']:checked + label {
   background-color: #f5a117;
 }
+
+@media screen and (max-width: 1400px) {
+  .SideBar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .checkBox {
+    display: none;
+  }
+
+  .SideBar_itmes > .suchBar {
+    border-bottom: solid 0px;
+  }
+
+  .suchBar > input {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
